@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "AddParent";
+    Layout = "~/Views/Shared/Dashboard.cshtml";
+}
+
+
+<script src="~/jquery/Parent.js"></script>
+<script src="~/asset/Common.js"></script>
+
+
+
+<br />
+<div class="row clearfix">
+    <div class="col-md-12" style="">
+        <div class="card">
+            <div class="header">
+                <h5>AddParent</h5>
+            </div>
+            <div class="body">
+                <form id="basic-form" method="post" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" name="Name" id="p_name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>CNIC</label>
+                                <input type="text" name="CNIC" id="CNIC" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>DOB</label>
+                                <input type="date" name="DOB" id="DOB" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Cell Number</label>
+                                <input type="text" name="Cell_Number" id="Cellnumb" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" name="password" id="password" class="form-control" required>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>Gender</label>
+                                <br />
+                                <label class="fancy-radio">
+                                    <input type="radio" name="Gender" id="gender" checked value="male" required data-parsley-errors-container="#error-radio">
+                                    <span><i></i>Male</span>
+                                </label>
+                                <label class="fancy-radio">
+                                    <input type="radio" name="Gender" id="gender" value="female">
+                                    <span><i></i>Female</span>
+                                </label>
+                                <p id="error-radio"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                           
+                            <div class="form-group">
+                                <label>Parent/Guardian Of :</label>
+                                <select  id="pgof" class="form-control" required>
+                                    <option value="">Select...........</option>
+                                    @foreach (var item in ViewBag.stud)
+                                    {
+                                        <option value="@item.Stud_Id">@item.Roll_Number</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Parent/Guardian</label>
+                                <select id="pg" class="form-control" required>
+                                    <option value="">Select...........</option>
+                                    @foreach (var item in ViewBag.rel)
+                                    {
+                                        <option value="@item.Relation_Id">@item.Relation1</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Relation</label>
+                                <input type="text" name="password" id="relation" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Address</label>
+                                <textarea class="form-control" cols="3" rows="3" id="addresses" name="Address" required></textarea>
+                            </div>
+                            <br>
+
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn  btn-primary btn-block col-md-6" onclick="Addparent()">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

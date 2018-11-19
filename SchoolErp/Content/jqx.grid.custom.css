@@ -1,0 +1,21 @@
+﻿
+/*jqgrid filter icon*/
+.jqx-grid-column-filterbutton {
+    background-image: url('/Content/images/f1.png') !important;
+}
+
+.jqx-grid-column-header {
+    padding-left: 2px !important;
+    font-weight: bold;
+}
+
+.jqx-grid-cell {
+    padding-left: 2px !important;
+}
+
+.cellcustom {
+}
+
+.jqx-grid-header {
+    height: 35px !important;
+}

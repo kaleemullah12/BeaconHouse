@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "CST";
+    Layout = "~/Views/Shared/Dashboard.cshtml";
+}
+
+
+<script src="~/jquery/Exam_Schedule.js"></script>
+<script src="~/asset/Common.js"></script>
+
+
+
+<br />
+<div class="row clearfix">
+    <div class="col-md-12" style="">
+        <div class="card">
+            <div class="header">
+                <h5>SubjectDetails</h5>
+            </div>
+            <div class="body">
+                <form id="basic-form" method="post" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" name="Name" id="E_Name" class="form-control" required>
+                            </div>
+
+                            
+                            <div class="form-group">
+                                <label>Class</label>
+                                <select id="E_Cal" class="form-control" required>
+                                    <option value="">Select...........</option>
+                                    @foreach (var item in ViewBag.cl)
+                                    {
+                                        <option value="@item.Class_Id">@item.Name</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Section</label>
+                                <select id="E_Sec" class="form-control" required>
+                                    <option value="">Select...........</option>
+                                    @foreach (var item in ViewBag.sc)
+                                    {
+                                        <option value="@item.Section_Id">@item.Name</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Subject</label>
+                                <select id="E_Sub" class="form-control" required>
+                                    <option value="">Select...........</option>
+                                    @foreach (var item in ViewBag.sb)
+                                    {
+                                        <option value="@item.Subject_Id">@item.Name</option>
+                                    }
+                                </select>
+                            </div>
+                            
+                            
+                               
+
+
+                                
+                            </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Date</label>
+                                <input type="date" name="Name" id="E_Date" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Start Time</label>
+                                <input type="time" name="Name" id="E_Stime" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>End Time</label>
+                                <input type="time" name="Name" id="E_Etime" class="form-control" required>
+                            </div>
+
+                            </div>
+
+                        </div>
+
+                    <button type="button" class="btn  btn-primary btn-block col-md-6" onclick="Exam_Schedule()">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

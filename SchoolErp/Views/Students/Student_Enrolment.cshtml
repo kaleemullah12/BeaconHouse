@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewBag.Title = "Student_Enrolment";
+    Layout = "~/Views/Shared/Dashboard.cshtml";
+}
+<link href="~/Table/css/style.css" rel="stylesheet" />
+
+
+
+<br />
+<div class="row clearfix">
+    <div class="col-md-12" style="">
+        <div class="card">
+            <div class="header">
+                <h5>StudentEnrollment</h5>
+            </div>
+            <div class="body">
+                <form id="basic-form" method="post" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Enrollment ID</label>
+                                <input type="number" name="" id="enrollId" readonly class="form-control" required>
+                            </div>
+                            
+
+                            <div class="form-group">
+                                <label>Roll # :</label>
+                                <select id="E_Roll" class="form-control" required>
+                                    <option value="">Select...........</option>
+                                    @foreach (var item in ViewBag.stud)
+                                    {
+                                        <option value="@item.Stud_Id">@item.Roll_Number</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Class</label>
+                                <select id="E_Class" class="form-control"  onchange="GetSection()" required>
+                                    <option value="">Select...........</option>
+                                    @foreach (var item in ViewBag.cl)
+                                    {
+                                        <option value="@item.Class_Id">@item.Name</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Section</label>
+                                <select id="E_Section" class="form-control" onchange="GetStaff()" required>
+                                   
+                                    
+                                </select>
+                            </div>
+                           
+
+
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Incharge</label>
+                                <select id="E_Staff" class="form-control" required></select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Session Start Date</label>
+                                <input type="date" name="" id="E_Startdate" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Session End Date</label>
+                                <input type="date" name="" id="E_Enddate" class="form-control" required>
+                            </div>
+                            
+                            <br>
+
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn  btn-primary btn-block col-md-6" onclick="Student_Enrolment()">Save</button>
+                </form>
+            </div>
+            <br />
+
+            <section class="col-md-10 table-bordered table-striped table-hover table-responsive-sm " style="margin-left:50px;">
+                <!--for demo wrap-->
+
+
+
+                <h1>Enrollment List</h1>
+
+                <div class="tbl-content">
+                    <table cellpadding="0" cellspacing="0" border="1">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th class="table-dark">Student Name</th>
+                                <th class="table-dark">Class Name</th>
+                                <th class="table-dark">Section</th>
+                                <th class="table-dark">Staff Name</th>
+                                <th class="table-dark">Start Time</th>
+                                <th class="table-dark">End Time</th>
+                                <th class="table-dark">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbllist"></tbody>
+                    </table>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<script src="~/asset/js/jquery.min.js"></script>
+
+<script src="~/jquery/StudentEnrolment.js"></script>
+<script src="~/Table/js/index.js"></script>
+<script src="~/asset/Common.js"></script>

@@ -1,0 +1,160 @@
+﻿<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Admin LogIn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Subject Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- Custom Theme files -->
+    <link href="~/Content/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="~/Content/style.css" type="text/css" rel="stylesheet" media="all">
+    <!-- Testimonials-Css -->
+    <link rel="stylesheet" href="~/Content/owl.theme.css" type="text/css" media="all">
+    <link rel="stylesheet" href="~/Content/owl.carousel.css" type="text/css" media="screen" property="" />
+    <!-- font-awesome icons -->
+    <link href="~/Content/fontawesome-all.min.css" rel="stylesheet">
+    <!-- //Custom Theme files -->
+    <!-- online-fonts -->
+    @*<link href="//fonts.googleapis.com/css?family=Roboto:100i,400,500,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800" rel="stylesheet">*@
+    <!-- //online-fonts -->
+</head>
+
+<body>
+
+    <!-- banner -->
+    <div class="banner">
+        <!-- header -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-gradient-secondary pt-3">
+                <h1>
+                    <a class="navbar-brand" style="font-size:50px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color:white">
+                        Invictus
+                        <span>School</span>
+                    </a>
+                </h1>
+               
+                </nav>
+        </header>
+        <!-- //header -->
+        <div class="container">
+            <!-- banner-text -->
+            <div id="bg"></div>
+  
+       @using (Html.BeginForm("Login", "Home", FormMethod.Post)) { 
+            @*<form action="" method="post" style="margin-top:25px">*@
+                <h2 style="color:white;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align:center">Admin LogIn</h2>
+                <label class="col-lg-3" style="color:white">User Name</label>
+                <input type="text" name="User_Name" id="" placeholder="User Name" class="email col-lg-7 ">
+
+                <label for="" class="col-lg-3" style="color:white">Password</label>
+                <input type="password" name="Password" id="" placeholder="password" class="pass col-lg-7 ">
+
+                <button type="submit" style="margin-left:25%">login to your account</button>
+       }
+       @*</form>*@
+
+        </div>
+    </div>
+    <!-- //banner-text -->
+    <!--banner form-->
+   
+   
+    <!--//newsletter-->
+    <!-- js -->
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <!-- //js -->
+    <!-- carousel(for feedback) -->
+    <script src="~/Scripts/owl.carousel.js"></script>
+    <script>
+		$(document).ready(function () {
+			$('.owl-carousel').owlCarousel({
+				loop: true,
+				margin: 10,
+				responsiveClass: true,
+				responsive: {
+					0: {
+						items: 1,
+						nav: true
+					},
+					600: {
+						items: 2,
+						nav: false
+					},
+					1000: {
+						items: 3,
+						nav: true,
+						loop: false,
+						margin: 20
+					}
+				}
+			})
+		})
+    </script>
+
+    <!-- //carousel(for feedback) -->
+    <!-- stats -->
+    <script src="~/Scripts/jquery.waypoints.min.js"></script>
+    <script src="~/Scripts/jquery.countup.js"></script>
+    <script>
+			$('.counter').countUp();
+    </script>
+    <!-- //stats -->
+    <!-- start-smooth-scrolling -->
+    <script src="~/Scripts/move-top.js"></script>
+    <script src="~/Scripts/easing.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+            /*
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+            };
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <script src="~/Scripts/SmoothScroll.min.js"></script>
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="~/Scripts/bootstrap.js"></script>
+</body>
+</html>

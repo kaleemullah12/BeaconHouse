@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Event";
+    Layout = "~/Views/Shared/Dashboard.cshtml";
+}
+
+
+<script src="~/jquery/Event.js"></script>
+<script src="~/asset/Common.js"></script>
+
+
+
+<br />
+<div class="row clearfix">
+    <div class="col-md-12">
+        <div class="card" style="height:160%; ">
+            <div class="header">
+                <h5>Event</h5>
+            </div>
+            <div class="body">
+                <form id="basic-form" method="post" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" name="Name" id="E_Name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Date</label>
+                                <input type="date" name="Name" id="E_Date" class="form-control" required>
+                            </div>
+                           
+                            <div class="form-group">
+                                <label>Detail</label>
+                                <textarea class="form-control" cols="5" rows="6" id="E_Detail" name="Address" required></textarea>
+                            </div>
+
+
+
+
+
+                        </div>
+
+                    </div>
+
+                    <button type="button" class="btn  btn-primary btn-block col-md-6" onclick="Event()">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

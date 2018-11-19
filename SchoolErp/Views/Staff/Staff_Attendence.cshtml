@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "StaffAttendence";
+    Layout = "~/Views/Shared/Dashboard.cshtml";
+}
+
+<script src="~/asset/Common.js"></script>
+<script src="~/jquery/StaffAttendence.js"></script>
+
+
+
+
+<br />
+<div class="row clearfix">
+    <div class="col-md-12" style="">
+        <div class="card">
+            <div class="header">
+                <h5>StaffAttendence</h5>
+            </div>
+            <div class="body">
+                <form id="basic-form" method="post" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                                <label>Name :</label>
+                                <select id="St_Id" class="form-control" required>
+                                    <option value="">Select...........</option>
+                                    @foreach (var item in ViewBag.st)
+                                    {
+                                        <option value="@item.Staff_Id">@item.Name</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Date</label>
+                                <input type="date" name="password" id="date" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Status</label>
+                                <br />
+                                <label class="fancy-radio">
+                                    <input type="radio" name="Gender" id="gender" value="Present" class="form-control" checked>
+                                    <span><i></i>Present</span>
+                                </label>
+                                <label class="fancy-radio">
+                                    <input type="radio" name="Gender" id="gender" value="Absent" class="form-control">
+                                    <span><i></i>Absent</span>
+                                </label>
+                                <p id="error-radio"></p>
+                            </div>
+
+
+                            <br>
+
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn  btn-primary btn-block col-md-6" onclick="Staff_Attendence()">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

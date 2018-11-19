@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/Dashboard.cshtml";
+}
+
+
+<link href="~/Table/css/style.css" rel="stylesheet" />
+
+
+
+<br />
+<div class="row clearfix">
+    <div class="col-md-12" style="">
+        <div class="card">
+            <div class="header">
+                <h5>Class Assign To Section</h5>
+            </div>
+            <div class="body">
+                <form id="basic-form" method="post" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Class</label>
+                                <select id="Classid" class="form-control" required>
+                                   
+                                    @foreach (var item in ViewBag.cl)
+                                    {
+                                        <option value="@item.Class_Id">@item.Name</option>
+                                    }
+                                </select>
+                            </div>
+                            <br />
+                            <table class="table table-togglable text-nowrap table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Section</th>
+                                        <th class="text-right">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="container_List"></tbody>
+                            </table>
+                            <br />
+                            <div class="row form-group">
+                                <label class="col-md-2">Section</label>
+                                <select id="section" class="form-control col-md-6" required>
+                                   
+                                    <option value="">Select...........</option>
+                                    @foreach (var item in ViewBag.sc)
+                                    {
+                                        <option value="@item.Section_Id">@item.Name</option>
+                                    }
+                                </select>
+                                <button type="button" class="btn btn-success btnsave col-md-4" onclick="Add();">Add</button>
+                            </div>
+                          </div>
+
+                    </div>
+                    <button type="button" class="btn  btn-primary btn-block col-md-6" id="up" onclick="Update()">Update</button>
+                    <button type="button" class="btn  btn-primary btn-block col-md-6" id="sa" onclick="Save()">Save</button>
+                </form>
+            </div>
+            <br />
+            <section class="col-md-10 table-bordered table-striped table-hover table-responsive-sm " style="margin-left:50px;">
+                <!--for demo wrap-->
+
+
+
+                <h1>Section Assign list </h1>
+
+                <div class="tbl-content">
+                    <table cellpadding="0" cellspacing="0" border="1">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th class="table-dark">Class Name</th>
+                               
+                                <th class="table-dark">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbllist"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="~/asset/js/jquery.min.js"></script>
+<script src="~/jquery/Cl_Sec.js"></script>
+<script src="~/asset/Common.js"></script>

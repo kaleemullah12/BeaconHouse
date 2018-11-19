@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/Dashboard.cshtml";
+}
+
+<h2>Dashboard</h2>
+<div class="row" style="margin-left:750px">
+    <input type="text" class="form-control col-md-8" placeholder="Search........." id="search" />
+    <input type="button" name="Search" value="Search" class="btn btn-info btn-sm col-md-2 " />
+</div>
+<br />
+
+<div class="clearfix"></div>
+<div class="col-md-12" style="background-color:aliceblue">
+    <br />
+    <div class="row">
+        <div class="col-md-4">
+
+            <div class="card" style="width: 18rem; background-color:mediumspringgreen;height:150px">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:white">Total School's Students<span class="fa fa-history fa-spin"></span></h5>
+                    <h6 class="card-subtitle mb-2 " style="color:white">Student Record:<span class="glyphicon glyphicon-user"></span></h6>
+                    <h2 style="color:white">@ViewBag.total</h2>
+                    <a href="/Students/StudentList" class="card-link" style="color:white">Student list</a>
+                    <a href="#" class="card-link" style="color:white">Another link</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem; background-color:indianred; height:150px ">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:white">Total Classes</h5>
+                    <h6 class="card-subtitle mb-2 " style="color:white">Classes</h6>
+                    <h2 style="color:white">@ViewBag.cl</h2>
+                    <a href="#" class="card-link" style="color:white">Card link</a>
+                    <a href="#" class="card-link" style="color:white">Another link</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem; background-color:cornflowerblue;height:150px ">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:white">Total Staff</h5>
+                    <h6 class="card-subtitle mb-2 " style="color:white">Staff</h6>
+                    <h2 style="color:white">@ViewBag.sec</h2>
+                    <a href="#" class="card-link" style="color:white">Card link</a>
+                    <a href="#" class="card-link" style="color:white">Another link</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem; background-color:darkorange;height:150px">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:white">Exam</h5>
+                    <h6 class="card-subtitle mb-2 " style="color:white">Comming Exam</h6>
+                    <p class="card-text" style="color:white">15-10-2018</p>
+                    <a href="#" class="card-link" style="color:white">Card link</a>
+                    <a href="#" class="card-link" style="color:white">Another link</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-hover" style="width: 18rem;height:150px;background-color:aqua">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:white">Results</h5>
+                    <h6 class="card-subtitle mb-2 " style="color:white">Comming Results</h6>
+                    <p class="card-text" style="color:white">15-10-2018</p>
+                    <a href="#" class="card-link" style="color:white">Card link</a>
+                    <a href="#" class="card-link" style="color:white">Another link</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

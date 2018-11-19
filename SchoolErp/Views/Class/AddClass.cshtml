@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "AddClasses";
+    Layout = "~/Views/Shared/Dashboard.cshtml";
+}
+
+<link href="~/Table/css/style.css" rel="stylesheet" />
+
+
+
+<br />
+<div class="row clearfix">
+    <div class="col-md-12" >
+        <div class="card" style="height:160%; ">
+            <div class="header">
+                <h5>AddClasses</h5>
+            </div>
+            <div class="body">
+                
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form id="basic-form" method="post" novalidate>
+                                <div class="form-group">
+                                    <label>Class ID</label>
+                                    <input type="text" name="Name" id="C_ID" class="form-control" readonly required>
+                                </div>
+                                  <div class="form-group">
+                                    <label>Name</label>
+                                    <input type="text" name="Name" id="C_Name" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Fees</label>
+                                    <input type="text" id="Fees" value="0" class="form-control" onkeyup="this.value = this.value.replace(/[^\d]/, '');" />
+                                   
+                                </div>
+                             
+
+                                <button type="button" class="btn  btn-primary col-md-12" onclick="AddClass()">Save</button>
+                            </form>
+                          </div>
+                        <div class="col-md-6" style="margin-top:-50px">
+                            <section class="col-md-10 table-bordered table-striped table-hover table-responsive-sm " style="margin-left:50px;">
+                               
+
+
+
+                                <h1>Classes List</h1>
+
+                                <div class="tbl-content">
+                                    <table cellpadding="0" cellspacing="0" border="1">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th class="table-dark">Name</th>
+                                                <th class="table-dark">Fees</th>
+                                                
+                                                <th class="table-dark">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbllist"></tbody>
+                                    </table>
+                                </div>
+                            </section>
+                          
+
+
+                        </div>
+  </div>
+
+                  
+               
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="~/asset/js/jquery.min.js"></script>
+<script src="~/jquery/Class.js"></script>
+<script src="~/Table/js/index.js"></script>
+<script src="~/asset/Common.js"></script>

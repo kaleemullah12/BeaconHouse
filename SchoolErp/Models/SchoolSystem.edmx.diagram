@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c5697bc1da2d46afa4268ac687e27959" Name="Diagram1">
+        <EntityTypeShape EntityType="InvictusSchoolModel.Admin" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvictusSchoolModel.Attendence" Width="1.5" PointX="7.5" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvictusSchoolModel.Cl_Sec" Width="1.5" PointX="7.5" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvictusSchoolModel.Cl_Sub" Width="1.5" PointX="10.5" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvictusSchoolModel.Class" Width="1.5" PointX="5.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvictusSchoolModel.CST" Width="1.5" PointX="7.5" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvictusSchoolModel.Designation" Width="1.5" PointX="0.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvictusSchoolModel.Event" Width="1.5" PointX="2.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvictusSchoolModel.Exam_Schedule" Width="1.5" PointX="10.5" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvictusSchoolModel.Parent_Record" Width="1.5" PointX="10.5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvictusSchoolModel.Qualification" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvictusSchoolModel.Relation" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvictusSchoolModel.Result" Width="1.5" PointX="10.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvictusSchoolModel.Section" Width="1.5" PointX="5.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvictusSchoolModel.Staff" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvictusSchoolModel.Staff_Attendence" Width="1.5" PointX="5.25" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvictusSchoolModel.Student_Enrolment" Width="1.5" PointX="7.5" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvictusSchoolModel.Student_Record" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvictusSchoolModel.Subject" Width="1.5" PointX="5.25" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvictusSchoolModel.sysdiagram" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_Attendence_Student_Record" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_Cl_Sec_Class" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_Cl_Sec_Sec" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_Cl_Sub_Class" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_Cl_Sub_Sub" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_CST_Class" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_Exam_Schedule_Class" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_Result_Class" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_Student_Enrolment_Class" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_CST_Sections" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_CST_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_CST_Subjects" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_Staff_Designation" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_Exam_Schedule_Sections" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_Exam_Schedule_Subjects" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_Parent_Record_Relations" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_Parent_Record_Relations1" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_Parent_Record_Student_Record" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_Staff_Qualification" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_Result_Sections" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_Result_Student_Record" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_Result_Subjects" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_Sections_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_Student_Enrolment_Sections" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_Staff_Attendence_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_Student_Enrolment_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="InvictusSchoolModel.FK_Student_Enrolment_Student_Record" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
