@@ -117,9 +117,10 @@ function GetId(id) {
         contentType: "application/json;charset=utf-8",
         datatype: "json",
         success: function (result) {
-
-
-            $("#C_ID").val(result.Class_Id)
+            debugger;
+           
+          
+            $("#C_ID").val(result.Class_Id);
             $("#C_Name").val(result.Name);
             $("#Fees").val(result.Fees);
         },

@@ -23,13 +23,21 @@ namespace SchoolErp.Controllers
         [HttpGet]
         public ActionResult Exam_Schedule()
         {
-            var sub_list = db.Subjects.ToList();
-            ViewBag.sb = sub_list;
-            var sec_list = db.Sections.ToList();
-            ViewBag.sc = sec_list;
-            var cal_list = db.Classes.ToList();
-            ViewBag.cl = cal_list;
-            return View();
+            if (Session["admin"] != null)
+            {
+                var sub_list = db.Subjects.ToList();
+                ViewBag.sb = sub_list;
+                var sec_list = db.Sections.ToList();
+                ViewBag.sc = sec_list;
+                var cal_list = db.Classes.ToList();
+                ViewBag.cl = cal_list;
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            
         }
         [HttpPost]
         public JsonResult Exam_Schedule(Exam_Schedule rec)

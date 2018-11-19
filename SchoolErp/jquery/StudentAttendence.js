@@ -64,3 +64,41 @@ function AddAttendence() {
 
     });
 }
+
+
+function GetSection() {
+    $("#E_Section").html('');
+
+    var classId = $('#E_Class').val();
+    $.ajax({
+        url: "/Students/GetSection/" + classId,
+        type: "GET",
+        dataType: "json",
+        success: function (data) {
+            debugger;
+            $('#E_Section').append($("<option>Select.......</option>"));
+            //$.each(data, function (index, value) {
+            for (var i = 0; i < data.length; i++) {
+
+                $("#E_Section").append($("<option />").val(data[i].Sec_Id).text(data[i].Name));
+                //});
+            }
+        },
+
+    });
+}
+
+function GetStudent() {
+   var sec_id= $('#E_Section').val();
+    $.ajax({
+        url: '/Students/GetStudAttend/' + sec_id,
+        type: 'Get',
+        dataType: 'Json',
+        success: function (result) {
+            for (var i = 0; i < length; i++){
+             
+            }
+        }
+
+    });
+}

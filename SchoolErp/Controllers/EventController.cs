@@ -22,11 +22,18 @@ namespace SchoolErp.Controllers
             return View();
         }
         [HttpPost]
-        public JsonResult Event(Event rec)
+        public ActionResult Event(Event rec)
         {
-            Eventservices services = new Eventservices();
-            services.Event(rec);
-            return Json(new { msg = "save" }, JsonRequestBehavior.AllowGet);
+            if (Session["admin"] != null)
+            {
+                Eventservices services = new Eventservices();
+                services.Event(rec);
+                return Json(new { msg = "save" }, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return RedirectToAction("Login", "Home");
+            }
         }
 
     }

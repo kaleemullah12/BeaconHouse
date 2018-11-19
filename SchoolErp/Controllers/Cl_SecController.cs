@@ -27,11 +27,17 @@ namespace SchoolErp.Controllers
         }
         public ActionResult Create()
         {
+            if(Session["admin"] != null) { 
             var sec_list = db.Sections.ToList();
             ViewBag.sc = sec_list;
             var cal_list = db.Classes.ToList();
             ViewBag.cl = cal_list;
             return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Home");
+            }
         }
         [HttpPost]
         public JsonResult Save(Class_SectionVM rec)
@@ -42,16 +48,31 @@ namespace SchoolErp.Controllers
 
         public ActionResult RemoveCl_Sec(int id)
         {
-            service.RemoveCl_Sec(id);
-            return Json(new { msg = "Done" }, JsonRequestBehavior.AllowGet);
+            if (Session["admin"] != null)
+            {
+                service.RemoveCl_Sec(id);
+                return Json(new { msg = "Done" }, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return RedirectToAction("Login", "Home");
+            }
         }
         public ActionResult GetCl_Sec(int id)
         {
-            var det = service.GetCl_Sec(id);
-            return Json(det, JsonRequestBehavior.AllowGet);
+            if (Session["admin"] != null)
+            {
+                var det = service.GetCl_Sec(id);
+                return Json(det, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return RedirectToAction("Login", "Home");
+            }
         }
         public ActionResult Update(Class_SectionVM det)
         {
+           
             service.Update(det);
             return Json(new { msg = "Done" }, JsonRequestBehavior.AllowGet);
         }

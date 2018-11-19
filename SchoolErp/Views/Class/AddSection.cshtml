@@ -4,9 +4,7 @@
     Layout = "~/Views/Shared/Dashboard.cshtml";
 }
 
-<script src="~/asset/Common.js"></script>
-<script src="~/jquery/Section.js"></script>
-
+<link href="~/Table/css/style.css" rel="stylesheet" />
 
 
 
@@ -14,41 +12,81 @@
 <div class="row clearfix">
     <div class="col-md-12" style="">
         <div class="card">
-            <div class="header">
-                <h5>AddSection</h5>
-            </div>
-            <div class="body">
-                <form id="basic-form" method="post" novalidate>
+            <div class="col-md-12">
+                <div class="header">
+                    <h5>AddSection</h5>
+                </div>
+
+                <div class="body">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" name="Name" id="S_Name" class="form-control" required>
-                            </div>
-                           
-                            <div class="form-group">
-                                <label>Staff</label>
-                                <select id="S_Staff" class="form-control" required>
-                                    <option value="">Select...........</option>
-                                    @foreach (var item in ViewBag.st)
-                                    {
-                                        <option value="@item.Staff_Id">@item.Name</option>
-                                    }
-                                </select>
-                            </div>
-                            
-                            
-                            <br>
+
+                            <form id="basic-form" method="post" novalidate>
+                                <div class="form-group">
+                                    <label>Section ID</label>
+                                    <input type="text" name="Name" id="S_ID" class="form-control" readonly required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input type="text" name="Name" id="S_Name" class="form-control" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Staff</label>
+                                    <select id="S_Staff" class="form-control" required>
+                                        <option value="">Select...........</option>
+                                        @foreach (var item in ViewBag.st)
+                                        {
+                                            <option value="@item.Staff_Id">@item.Name</option>
+                                        }
+                                    </select>
+                                </div>
+
+
+                                <br>
+
+
+                                <button type="button" class="btn  btn-primary btn-block col-md-12" onclick="AddSection()">Save</button>
+                            </form>
+                        </div>
+                        <div class="col-md-6" style="margin-top:-50px">
+                            <section class="col-md-10 table-bordered table-striped table-hover table-responsive-sm " style="margin-left:50px;">
+
+
+
+
+                                <h1>Section Record</h1>
+
+                                <div class="tbl-content">
+                                    <table cellpadding="0" cellspacing="0" border="1">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th class="table-dark">Section Name</th>
+                                                <th class="table-dark">Staff Name</th>
+
+                                                <th class="table-dark">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbllist"></tbody>
+                                    </table>
+                                </div>
+                            </section>
+
+
 
                         </div>
                     </div>
 
-                    <button type="button" class="btn  btn-primary btn-block col-md-6" onclick="AddSection()">Save</button>
-                </form>
+                </div>
+                
             </div>
+               
         </div>
     </div>
 
 </div>
 
-
+<script src="~/asset/js/jquery.min.js"></script>
+<script src="~/jquery/Section.js"></script>
+<script src="~/Table/js/index.js"></script>
+<script src="~/asset/Common.js"></script>

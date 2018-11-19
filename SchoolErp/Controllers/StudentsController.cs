@@ -90,37 +90,53 @@ namespace SchoolErp.Controllers
         [HttpGet]
         public ActionResult Student_Enrolment()
         {
-            var stud_list = db.Student_Records.ToList();
-            ViewBag.stud = stud_list;
-            var cl_list = db.Classes.ToList();
-            ViewBag.cl = cl_list;
-            //var sec_list = db.Cl_Sec.Include("").Where(x => x.Sec_Id == );
-            //ViewBag.sec = sec_list;
-            var st_list = db.Staffs.ToList();
-            ViewBag.st = st_list;
-            return View();
-        }
-        [HttpPost]
-        public JsonResult Student_Enrolment(Student_Enrolment rec)
-        {
-            EnrolmentServices services = new EnrolmentServices();
-            if (rec.Enrolment_Id == 0) { 
-            services.Student_Enrolment(rec);
-            var stud_list = db.Student_Records.ToList();
-            ViewBag.stud = stud_list;
-            var cl_list = db.Classes.ToList();
-            ViewBag.cl = cl_list;
-                return Json(new { msg = "save" }, JsonRequestBehavior.AllowGet);
-            }
-            else
+            if (Session["admin"] != null)
             {
-                services.Student_Enrolment(rec);
                 var stud_list = db.Student_Records.ToList();
                 ViewBag.stud = stud_list;
                 var cl_list = db.Classes.ToList();
                 ViewBag.cl = cl_list;
-                return Json(new { msg = "Update" }, JsonRequestBehavior.AllowGet);
-            }           
+                //var sec_list = db.Cl_Sec.Include("").Where(x => x.Sec_Id == );
+                //ViewBag.sec = sec_list;
+                var st_list = db.Staffs.ToList();
+                ViewBag.st = st_list;
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Home");
+            }
+        }
+        [HttpPost]
+        public ActionResult Student_Enrolment(Student_Enrolment rec)
+        {
+            if (Session["admin"] != null)
+            {
+                EnrolmentServices services = new EnrolmentServices();
+                if (rec.Enrolment_Id == 0)
+                {
+                    services.Student_Enrolment(rec);
+                    var stud_list = db.Student_Records.ToList();
+                    ViewBag.stud = stud_list;
+                    var cl_list = db.Classes.ToList();
+                    ViewBag.cl = cl_list;
+                    return Json(new { msg = "save" }, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    services.Student_Enrolment(rec);
+                    var stud_list = db.Student_Records.ToList();
+                    ViewBag.stud = stud_list;
+                    var cl_list = db.Classes.ToList();
+                    ViewBag.cl = cl_list;
+                    return Json(new { msg = "Update" }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            else
+            {
+                return RedirectToAction("Login", "Home");
+            }
+                    
         }
 
         public ActionResult GetSection(int Id)
@@ -155,13 +171,22 @@ namespace SchoolErp.Controllers
         [HttpGet]
         public ActionResult AddAttendence()
         {
-            var stud_list = db.Student_Records.ToList();
-            ViewBag.stud = stud_list;
-            return View();
+            if (Session["admin"] != null)
+            {
+                var cl_list = db.Classes.ToList();
+                ViewBag.cl = cl_list;
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            
         }
         [HttpPost]
         public JsonResult AddAttendence(Attendence rec)
         {
+
             S_AttendenceServices services = new S_AttendenceServices();
             services.AddAttendence(rec);
             var stud_list = db.Student_Records.ToList();
@@ -169,8 +194,14 @@ namespace SchoolErp.Controllers
             return Json(new { msg = "save" }, JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult GetStudAttend(int id)
+        {
+            S_AttendenceServices service = new S_AttendenceServices();
+            var rec=service.GetStudAttend(id);
+            return Json(rec, JsonRequestBehavior.AllowGet);
+        }
 
-        
+
 
     }
 

@@ -14,6 +14,10 @@ namespace SchoolErp.Services
             db.Attendences.Add(rec);
             db.SaveChanges();
         }
-
+        public object GetStudAttend(int id)
+        {
+            var rec = db.Student_Enrolments.Where(x => x.Section_Id == id).Select(o => new { o.Stud_ID, o.Student_Record.Name }).ToList();
+            return rec;
+        }
     }
 }

@@ -67,7 +67,7 @@ function GetList() {
             var result = JSON.parse(result);
             debugger;
             for (var i = 0; i < result.length; i++) {
-                AddOption = '<tr id=' + result[i].Des_Id + '><td>' + result[i].Name + '</td> <td style="text-align:center">' + '<button id="loading" class="btn btn-sm" style="font-size:15px;color:red;hover:green" onclick=' + ' Delete' + '(' + result[i].Des_Id + ')><span class="glyphicon glyphicon-trash"></span></button> | <button id="Edit" class="btn btn-sm" style="font-size:20px;color:Aqua;" onclick=' + 'GetId' + '(' + result[i].Des_Id + ')>' + " " + '<span class="glyphicon glyphicon-edit"></span> </button></td> </tr>'
+                AddOption = '<tr id=' + result[i].Des_Id + '><td>' + result[i].Name + '</td> <td style="text-align:center">' + '<button id="loading" class="btn btn-sm" style="font-size:15px;color:red;hover:green" onclick=' + ' Delete' + '(' + result[i].Des_Id + ')><span class="glyphicon glyphicon-trash"></span></button></td> </tr>'
                 $('#tbllist').append(AddOption);
             }
 

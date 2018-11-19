@@ -19,11 +19,19 @@ namespace SchoolErp.Controllers
         [HttpGet]
         public ActionResult AddStaff()
         {
-            var Des_list = db.Designations.ToList();
-            var Qualif_list = db.Qualifications.ToList();
-            ViewBag.Des = Des_list;
-            ViewBag.Qualif = Qualif_list;
-            return View();
+            if (Session["admin"] != null)
+            {
+                var Des_list = db.Designations.ToList();
+                var Qualif_list = db.Qualifications.ToList();
+                ViewBag.Des = Des_list;
+                ViewBag.Qualif = Qualif_list;
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            
         }
         [HttpPost]
         public JsonResult AddStaff(Staff rec)

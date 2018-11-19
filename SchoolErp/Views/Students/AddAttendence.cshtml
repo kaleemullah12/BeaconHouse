@@ -4,8 +4,6 @@
     Layout = "~/Views/Shared/Dashboard.cshtml";
 }
 
-<script src="~/asset/Common.js"></script>
-<script src="~/jquery/StudentAttendence.js"></script>
 
 
 
@@ -21,21 +19,27 @@
                 <form id="basic-form" method="post" novalidate>
                     <div class="row">
                         <div class="col-md-6">
-                            
-                            <div class="form-group">
-                                <label>Roll Number :</label>
-                                <select id="S_Roll" class="form-control" required>
-                                    <option value="">Select...........</option>
-                                    @foreach (var item in ViewBag.stud)
-                                    {
-                                        <option value="@item.Stud_Id">@item.Roll_Number</option>
-                                    }
-                                </select>
-                            </div>
                             <div class="form-group">
                                 <label>Date</label>
                                 <input type="date" name="password" id="date" class="form-control" required>
                             </div>
+
+                            <div class="form-group">
+                                <label>Class</label>
+                                <select id="E_Class" class="form-control" onchange="GetSection()" required>
+                                    <option value="">Select...........</option>
+                                    @foreach (var item in ViewBag.cl)
+                                    {
+                                        <option value="@item.Class_Id">@item.Name</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Section</label>
+                                <select id="E_Section" class="form-control" onchange="GetStudent()" required></select>
+                            </div>
+
+                          
                             <div class="form-group">
                                 <label>Status</label>
                                 <br />
@@ -63,5 +67,7 @@
     </div>
 
 </div>
+<script src="~/asset/Common.js"></script>
+<script src="~/jquery/StudentAttendence.js"></script>
 
 

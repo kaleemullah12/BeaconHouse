@@ -19,11 +19,19 @@ namespace SchoolErp.Controllers
         [HttpGet]
         public ActionResult AddParent()
         {
-            var stud_list = db.Student_Records.ToList();
-            var rel_list = db.Relations.ToList();
-            ViewBag.stud = stud_list;
-            ViewBag.rel = rel_list;
-            return View();
+            if (Session["admin"] != null)
+            {
+                var stud_list = db.Student_Records.ToList();
+                var rel_list = db.Relations.ToList();
+                ViewBag.stud = stud_list;
+                ViewBag.rel = rel_list;
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Home");
+            }
+           
         }
         [HttpPost]
         public JsonResult AddParent (Parent_Record pec)

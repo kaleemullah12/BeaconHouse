@@ -42,5 +42,10 @@ namespace SchoolErp.Services
             db.SaveChanges();
 
         }
+        public object GetClass(int id)
+        {
+            var ret=db.Classes.Where(x=>x.Class_Id==id).Select(o => new { o.Class_Id, o.Fees, o.Name }).SingleOrDefault();
+            return ret;
+        }
     }
 }
