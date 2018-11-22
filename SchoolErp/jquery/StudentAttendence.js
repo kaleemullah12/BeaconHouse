@@ -95,8 +95,12 @@ function GetStudent() {
         type: 'Get',
         dataType: 'Json',
         success: function (result) {
-            for (var i = 0; i < length; i++){
-             
+            debugger;
+            for (var i = 0; i < result.length; i++){
+                AddOption = "<tr><td><label>"+ result[i].Roll_Number +"</label></td><td>" + "<input type='checkbox' name='check' checked></td></tr>" 
+                $('#attend').append(AddOption);
+
+
             }
         }
 

@@ -16,7 +16,7 @@ namespace SchoolErp.Services
         }
         public object GetStudAttend(int id)
         {
-            var rec = db.Student_Enrolments.Where(x => x.Section_Id == id).Select(o => new { o.Stud_ID, o.Student_Record.Name }).ToList();
+            var rec = db.Student_Enrolments.Where(x => x.Section_Id == id).Select(o => new { o.Stud_ID, o.Student_Record.Roll_Number }).ToList();
             return rec;
         }
     }
