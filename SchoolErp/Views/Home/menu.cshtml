@@ -63,21 +63,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </a>
                         </li>
                         <li class="nav-item mx-xl-4 mx-lg-3 my-lg-0 my-3">
-                            @Html.ActionLink("Admin LogIn", "Login", "Home",null , new { @class = "nav-link"});
+                            @Html.ActionLink("Admin LogIn", "Login", "Home", null, new { @class = "nav-link" })
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                               aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="services.html">Services</a>
-                                <a class="dropdown-item" href="typo.html">Typography</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="gallery.html">Gallery</a>
+                        <li class="nav-item mx-xl-4 mx-lg-3 my-lg-0 my-3">
+                            @Html.ActionLink("Student LogIn", "S_Login", "StudentPortal", null, new { @class = "nav-link" })
+                        </li>
+                        @*<li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false">
+                                    Dropdown
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="services.html">Services</a>
+                                    <a class="dropdown-item" href="typo.html">Typography</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="gallery.html">Gallery</a>
 
-                            </div>
-                        </li>
+                                </div>
+                            </li>*@
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact Us</a>
                         </li>
